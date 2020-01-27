@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "927977285502",
+    "firebase_url": "https://imcalculadora.firebaseio.com",
+    "project_id": "imcalculadora",
+    "storage_bucket": "imcalculadora.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927977285502:android:e63727a83a5cfd2d1b352f",
+        "android_client_info": {
+          "package_name": "br.com.ademir.calculadoraimc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927977285502-q2o3m2bt1rp7sffv440maep21j6cnecq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.ademir.calculadoraimc",
+            "certificate_hash": "47154fc8e95cccfaea41030bd8caa5c90a2cdfe5"
+          }
+        },
+        {
+          "client_id": "927977285502-kvk5hfavbk302i1aa8ttu1rggb3ovtgv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlwY54dQ4NZzVUP_MRBdnX_QHIOH-7ZnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927977285502-kvk5hfavbk302i1aa8ttu1rggb3ovtgv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
