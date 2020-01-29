@@ -8,8 +8,8 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="calculadoraimc"
-        android:icon="@mipmap/ic_launcher">
+        android:label="IMCalculadora"
+        android:icon="@mipmap/launcher_icon">
         <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
                 android:value="ca-app-pub-2802875285191503~4446707748"/>

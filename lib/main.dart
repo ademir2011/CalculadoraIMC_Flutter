@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
 
   void startBanner() {
     bannerAd = BannerAd(
-      adUnitId: BannerAd.testAdUnitId,
+      adUnitId: 'ca-app-pub-2802875285191503/4295305130',
       size: AdSize.smartBanner,
       targetingInfo: targetingInfo,
       listener: (MobileAdEvent event) {
@@ -101,17 +101,18 @@ class _HomeState extends State<Home> {
       double height = double.parse(heightController.text) / 100;
       double imc = weight / (height * height);
       if (imc < 18.5) {
-        _infoText = "Abaixo do Peso (${imc.toStringAsPrecision(4)})";
+        _infoText = "Abaixo do Peso IMC: ${imc.toStringAsPrecision(4)}";
       } else if (imc >= 18.5 && imc <= 24.9) {
-        _infoText = "Peso normal (${imc.toStringAsPrecision(4)})";
+        _infoText = "Peso normal  IMC: ${imc.toStringAsPrecision(4)}";
       } else if (imc >= 25.0 && imc <= 29.9) {
-        _infoText = "Levemente Acima do Peso (${imc.toStringAsPrecision(4)})";
+        _infoText =
+            "Levemente Acima do Peso IMC: ${imc.toStringAsPrecision(4)}";
       } else if (imc >= 30.0 && imc <= 34.9) {
-        _infoText = "Obesidade de Grau 1 (${imc.toStringAsPrecision(4)})";
+        _infoText = "Obesidade de Grau 1 IMC: ${imc.toStringAsPrecision(4)}";
       } else if (imc >= 35.0 && imc <= 39.9) {
-        _infoText = "Obesidade de Grau 2 (${imc.toStringAsPrecision(4)})";
+        _infoText = "Obesidade de Grau 2 IMC: ${imc.toStringAsPrecision(4)}";
       } else if (imc >= 40) {
-        _infoText = "Obesidade de Grau 3 (${imc.toStringAsPrecision(4)})";
+        _infoText = "Obesidade de Grau 3 IMC: ${imc.toStringAsPrecision(4)}";
       }
     });
   }
@@ -120,7 +121,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: null,
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFF8ACDEA),
       body: SingleChildScrollView(
         padding: EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 50.0),
         child: Form(
@@ -133,26 +134,38 @@ class _HomeState extends State<Home> {
               ),
               Text(
                 'IMCalculadora',
-                style: TextStyle(fontSize: 40.0),
+                style: TextStyle(fontSize: 40.0, color: Color(0xff746D75)),
               ),
               SizedBox(
                 height: 50.0,
               ),
               TextFormField(
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.numberWithOptions(
+                    decimal: true, signed: false),
                 decoration: InputDecoration(
                   hintText: 'Informe seu peso',
+                  hintStyle: TextStyle(
+                    color: Color(0xff746D75),
+                  ),
                   prefix: Text(
                     'KG',
+                    style: TextStyle(
+                      color: Color(0xff746D75),
+                    ),
                   ),
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                    borderSide: BorderSide(color: Colors.red, width: 5.0),
+                  ),
                 ),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.green, fontSize: 25.0),
+                style: TextStyle(color: Color(0xff746D75), fontSize: 25.0),
                 controller: weightController,
                 validator: (value) {
                   if (value.isEmpty) {
                     return "Insira seu Peso!";
+                  } else if (value.length > 3) {
+                    return "Peso inválido!";
                   }
                 },
               ),
@@ -163,13 +176,19 @@ class _HomeState extends State<Home> {
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   hintText: 'Informe sua altura',
+                  hintStyle: TextStyle(
+                    color: Color(0xff746D75),
+                  ),
                   prefix: Text(
                     'CM',
+                    style: TextStyle(
+                      color: Color(0xff746D75),
+                    ),
                   ),
                   border: OutlineInputBorder(),
                 ),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.green, fontSize: 25.0),
+                style: TextStyle(color: Color(0xff8C4843), fontSize: 25.0),
                 controller: heightController,
                 validator: (value) {
                   print(value.length);
@@ -199,7 +218,7 @@ class _HomeState extends State<Home> {
                       fontSize: 25.0,
                     ),
                   ),
-                  color: Colors.green,
+                  color: Color(0xff746D75),
                 ),
               ),
               SizedBox(
@@ -209,7 +228,7 @@ class _HomeState extends State<Home> {
                 _infoText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.green,
+                  color: Color(0xff746D75),
                   fontSize: 25.0,
                 ),
               )
